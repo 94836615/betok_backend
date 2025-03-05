@@ -2,12 +2,15 @@
 name = "betok"
 version = "0.1.0"
 description = ""
-authors = ["Noah <c94836615@gmail.com>"]
+authors = ["Noah <noahnap@hotmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
 
+
+[tool.poetry.group.dev.dependencies]
+commitizen = "^4.4.1"
 
 [build-system]
 requires = ["poetry-core"]
