@@ -27,4 +27,4 @@ COPY . /app/
 EXPOSE 3000
 
 # Serve the app
-CMD ["poetry", "run", "uvicorn", "main:app", "--host", "127.0.0.1", "--port", "3000"]
+CMD ["poetry", "run", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "3000"]
