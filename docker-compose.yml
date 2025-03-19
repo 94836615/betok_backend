@@ -5,7 +5,7 @@ services:
     build: .
     container_name: betok-backend
     ports:
-      - "8000:8000"
+      - "3000:3000"
     # Als je environment variables nodig hebt, kun je die hier definiëren
     # environment:
     #   - SOME_ENV_VAR=some_value

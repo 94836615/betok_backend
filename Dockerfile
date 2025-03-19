@@ -24,7 +24,7 @@ RUN poetry install --no-interaction --no-ansi
 COPY . /app/
 
 # Expose the port that the app runs on
-EXPOSE 8000
+EXPOSE 3000
 
 # Serve the app
-CMD ["poetry", "run", "uvicorn", "main:app", "--host", "127.0.0.1", "--port", "8000"]
+CMD ["poetry", "run", "uvicorn", "main:app", "--host", "127.0.0.1", "--port", "3000"]
