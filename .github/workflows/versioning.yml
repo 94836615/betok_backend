@@ -31,8 +31,8 @@ jobs:
         run: poetry install --no-interaction --no-ansi
 
       - name: Run Semantic Release
-        with:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        env:
+          github_token: ${{ secrets.GH_TOKEN }}
         run: |
           git config --global user.name "Versioning-bot"
           git config --global user.email "versioning@noahnap.nl"
