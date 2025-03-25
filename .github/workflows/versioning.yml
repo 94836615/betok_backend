@@ -1,0 +1,40 @@
+name: Versioning
+permissions:
+  contents: write
+  id-token: write
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install Poetry
+        run: |
+          pip install poetry
+          poetry config virtualenvs.create true
+
+      - name: Install Dependencies
+        run: poetry install --no-interaction --no-ansi
+
+      - name: Run Semantic Release
+        env:
+          github_token: ${{ secrets.GH_TOKEN }}
+        run: |
+          git config --global user.name "Versioning-bot"
+          git config --global user.email "versioning@noahnap.nl"
+          poetry run semantic-release version
+
