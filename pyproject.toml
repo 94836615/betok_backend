@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "betok"
-version = "0.0.0"
+version = "0.1.0"
 description = ""
 authors = ["Noah <noahnap@hotmail.com>"]
 readme = "README.md"
@@ -41,7 +41,6 @@ prerelease_token = "beta"
 prerelease = true
 
 [tool.semantic_release.changelog]
-changelog_file = ""
 exclude_commit_patterns = []
 mode = "init"
 insertion_flag = "<!-- version list -->"
