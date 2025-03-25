@@ -1,4 +1,7 @@
-name: Release
+name: Versioning
+permissions:
+  contents: write
+  id-token: write
 
 on:
   push:
@@ -33,5 +36,5 @@ jobs:
         run: |
           pip install python-semantic-release
           git config user.name "Noah Nap"
-          git config user.email "noahnap@hotmai.com"
+          git config user.email "noahnap@hotmail.com"
           semantic-release publish
