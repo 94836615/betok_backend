@@ -1,0 +1,37 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install Poetry
+        run: |
+          pip install poetry
+          poetry config virtualenvs.create false
+
+      - name: Install Dependencies
+        run: poetry install --no-interaction --no-ansi
+
+      - name: Run Semantic Release
+        env:
+          GH_TOKEN: ${{ secrets.SEMANTIC_VERSIONING_TOKEN }}
+        run: |
+          pip install python-semantic-release
+          git config user.name "Noah Nap"
+          git config user.email "noahnap@hotmai.com"
+          semantic-release publish
