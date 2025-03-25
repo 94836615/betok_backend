@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v0.1.1 (2025-03-25)
+
+### Build System
+
+- **pyproject**: Fixed version_variable
+  ([`4ffb0d6`](https://github.com/94836615/betok_backend/commit/4ffb0d66998fe7daa8c1c627387471dd141752b4))
+
+
 ## v0.1.1-beta.1 (2025-03-25)
 
 ### Bug Fixes
