@@ -16,9 +16,9 @@ def get_videos():
 
 @router.post("/videos", status_code=201)
 async def post_video(video: UploadFile = File(...)):
-    logger.info("Video received:", video.filename)
+    logger.info("Video received: %s", video.filename)
     contents = await video.read()
-    logger.info("File size:", len(contents))
+    logger.info("File size: %d", len(contents))
     if len(contents) == 0:
         return {"error": "Bestand is leeg"}
 
