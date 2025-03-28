@@ -9,6 +9,7 @@ package-mode = false
 [tool.poetry.dependencies]
 python = "^3.12"
 fastapi = {extras = ["standard"], version = "^0.115.12"}
+minio = "^7.2.15"
 
 [tool.poetry.group.dev.dependencies]
 commitizen = "^4.4.1"
