@@ -1,6 +1,41 @@
 # CHANGELOG
 
 
+## v0.2.0-beta.1 (2025-03-28)
+
+### Build System
+
+- **pyproject**: Fixed version_variable
+  ([`4ffb0d6`](https://github.com/94836615/betok_backend/commit/4ffb0d66998fe7daa8c1c627387471dd141752b4))
+
+### Code Style
+
+- **video-upload**: Fixed a typo
+  ([`bbf2e2d`](https://github.com/94836615/betok_backend/commit/bbf2e2d31cac326f50c79a426615ea964922e100))
+
+### Features
+
+- **vid-proc**: Made it possible to upload a video in to the blob storage, also implemented logger
+  and did other small adjustments
+  ([`d888ca9`](https://github.com/94836615/betok_backend/commit/d888ca9c51191bc24e036cb2493cc7f7d6aef394))
+
+### Performance Improvements
+
+- **logger**: Adjusted logger usage code
+  ([`8e10c39`](https://github.com/94836615/betok_backend/commit/8e10c39b199df0fe3b61db1ab064c4c191697e4d))
+
+### Refactoring
+
+- **general_action**: Made new files, renamed it and update deps in prep for feature implementation
+  ([`a8d5850`](https://github.com/94836615/betok_backend/commit/a8d585020f5d75357d9b41bd723b87dfc28b7896))
+
+New deps were added, implemented cors and video router and other small adjustments like new files
+  and renamed some
+
+- **schema**: Implemented a video schema for video validation
+  ([`e75c33c`](https://github.com/94836615/betok_backend/commit/e75c33ca58b55aeb5ffdcc54d76a570652b1ff38))
+
+
 ## v0.1.1-beta.1 (2025-03-25)
 
 ### Bug Fixes
