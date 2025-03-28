@@ -23,4 +23,4 @@ async def video_upload(file: UploadFile = File(...)):
         content_type=file.content_type,
     )
 
-    return {"message": "Upload succes with", "size": len(contents), "filename": object_name}
+    return {"message": "Upload success with", "size": len(contents), "filename": object_name}
