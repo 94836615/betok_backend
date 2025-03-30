@@ -30,7 +30,6 @@ allow_zero_version = true
 no_git_verify = false
 tag_format = "v{version}"
 version_toml = ["pyproject.toml:tool.poetry.version"]
-version_variable = ["setup.py:__version__"]
 
 [tool.semantic_release.branches.main]
 match = "(main|master)"
