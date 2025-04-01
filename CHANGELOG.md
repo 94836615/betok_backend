@@ -1,6 +1,33 @@
 # CHANGELOG
 
 
+## v0.2.0-beta.2 (2025-04-01)
+
+### Bug Fixes
+
+- **api**: Fixed the fault where users cant upload their video
+  ([`d572cc9`](https://github.com/94836615/betok_backend/commit/d572cc92eeba4244cf0f72d479cee6fffd0137bf))
+
+### Build System
+
+- **deps**: Updated deps
+  ([`6110d6c`](https://github.com/94836615/betok_backend/commit/6110d6cc4334d9d5942997fd085fe791e2453e31))
+
+- **deps/config**: Updated deps and adjusted the makefile
+  ([`665638f`](https://github.com/94836615/betok_backend/commit/665638fd1ad82c857f9e4b737831f31c3a2feccb))
+
+- **pyproject**: Removed version file temp
+  ([`65faceb`](https://github.com/94836615/betok_backend/commit/65faceb110061a85a7be8ab285472a6ca92aa660))
+
+### Refactoring
+
+- **cors**: Cors changes
+  ([`56d452c`](https://github.com/94836615/betok_backend/commit/56d452c9294b512c09b432e8ce8cfd1d4c3b9545))
+
+- **video_message**: Adjusted the return message of the endpoint
+  ([`800a30a`](https://github.com/94836615/betok_backend/commit/800a30ae68505dceb067393465ddc6d036553d36))
+
+
 ## v0.2.0-beta.1 (2025-03-28)
 
 ### Build System
