@@ -1,8 +1,15 @@
+import uuid
+from datetime import UTC, datetime
+
 from fastapi import APIRouter, UploadFile, File
 
 import logging
 
+from sqlalchemy.orm import Session
+
+from src.core.db import engine
 from src.crud.video_upload import video_upload
+from src.models.video import Video
 
 router = APIRouter()
 
@@ -25,4 +32,28 @@ async def post_video(video: UploadFile = File(...)):
     # Reset file pointer
     video.file.seek(0)
 
-    return await video_upload(video)
+    # Upload to Minio
+    result = await video_upload(video)
+    object_name = result["filename"]
+
+    url = f"https://console.noahnap.nl/videos/{object_name}"
+
+    # Adds metadata to the response
+    with Session(engine) as db:
+        video_entry = Video(
+            id=uuid.uuid4(),
+            filename=video.filename,
+            url=url,
+            created_at=datetime.now(UTC),
+            caption=None,  # later via Form(...)
+            user_id=None  # later via auth
+        )
+        db.add(video_entry)
+        db.commit()
+        db.refresh(video_entry)
+
+    return {
+        "message": "Upload success",
+        "video_id": str(video_entry.id),
+        "url": url
+    }
