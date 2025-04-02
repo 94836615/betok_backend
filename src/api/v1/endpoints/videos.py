@@ -1,10 +1,11 @@
 import uuid
 from datetime import UTC, datetime
 
-from fastapi import APIRouter, UploadFile, File
+from fastapi import APIRouter, UploadFile, File, Query
 
 import logging
 
+from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from src.core.db import engine
@@ -17,9 +18,22 @@ logger = logging.getLogger(__name__)
 
 
 @router.get("/videos", status_code=200)
-def get_videos():
-    return "Videos"
+def get_videos(limit: int = Query(2, ge=1), offset: int = Query(0, ge=0)):
+    with Session(engine) as db:
+        videos = db.execute(
+            select(Video).order_by(Video.created_at.desc()).limit(limit).offset(offset)
+        ).scalars().all()
 
+        return [
+            {
+                "id": str(video.id),
+                "filename": video.filename,
+                "url": video.url,
+                "caption": video.caption,
+                "created_at": video.created_at.isoformat()
+            }
+            for video in videos
+        ]
 
 @router.post("/videos", status_code=201)
 async def post_video(video: UploadFile = File(...)):
