@@ -10,10 +10,14 @@ package-mode = false
 python = "^3.12"
 fastapi = {extras = ["standard"], version = "^0.115.12"}
 minio = "^7.2.15"
+sqlalchemy = "^2.0.40"
+psycopg2 = "^2.9.10"
+python-dotenv = "^1.0.1"
 
 [tool.poetry.group.dev.dependencies]
 commitizen = "^4.4.1"
 python-semantic-release = "^9.21.0"
+alembic = "^1.15.2"
 
 [build-system]
 requires = ["poetry-core"]
