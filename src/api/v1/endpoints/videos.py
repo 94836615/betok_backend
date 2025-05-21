@@ -11,6 +11,7 @@ from sqlalchemy.orm import Session
 
 from src.core.config import settings
 from src.core.db import get_db
+from src.crud.likes_operations import count_video_likes
 from src.crud.video_upload import video_upload
 from src.models.video import Video
 
@@ -29,17 +30,19 @@ def get_videos(
         select(Video).order_by(Video.created_at.desc()).limit(limit).offset(offset)
     ).scalars().all()
 
-    return [
-        {
+    result = []
+    for video in videos:
+        likes_count = count_video_likes(db, str(video.id))
+        result.append({
             "id": video.id,
             "filename": video.filename,
             "url": video.url,
             "caption": video.caption,
-            "created_at": video.created_at.isoformat()
-        }
-        for video in videos
-    ]
+            "created_at": video.created_at.isoformat(),
+            "likes_count": likes_count
+        })
 
+    return result
 
 @router.post("/videos", status_code=201)
 async def post_video(
@@ -64,7 +67,7 @@ async def post_video(
     video_entry = Video(
         id=uuid.uuid4(),
         filename=video.filename,
-        url=f"{settings.minio_api_link}videos/{object_name}",
+        url=f"{settings.minio_api_link}/{object_name}",
         created_at=datetime.now(timezone.utc),
         caption=None,  # later via Form(...)
         user_id=None  # later via auth

@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from src.api.v1.endpoints import videos
+from src.api.v1.endpoints import videos, likes
 
 from src.core.config import settings
 
@@ -22,6 +22,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 app.include_router(videos.router, prefix=settings.prefix)
+app.include_router(likes.router, prefix=settings.prefix)
 
 
 @app.get("/")

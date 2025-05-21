@@ -1,15 +1,14 @@
 import os
 import sys
-
-from dotenv import load_dotenv
-
-from src.core.db import Base
-import src.models.video
 from logging.config import fileConfig
+from dotenv import load_dotenv
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
-
+import src.models.video
+import src.models.likes
 from alembic import context
+
+from src.core.db import Base
 
 load_dotenv()
 
@@ -24,13 +23,11 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..',
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
-# # add your model's MetaData object here
-# # for 'autogenerate' support
-# # from myapp import mymodel
+# add your model's MetaData object here
+# for 'autogenerate' support
+# from myapp import mymodel
 target_metadata = Base.metadata
-
-
-# target_metadata = None
+# target_metadata =
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:
