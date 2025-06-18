@@ -1,10 +1,34 @@
 # CHANGELOG
 
 
+## v0.3.0-beta.1 (2025-06-18)
+
+
 ## v0.2.0 (2025-06-18)
 
 
+## v0.2.0-beta.4 (2025-06-18)
+
+### Build System
+
+- **dep**: Dep update
+  ([`c3e77be`](https://github.com/94836615/betok_backend/commit/c3e77be0bdac9e6f68ad5935cead9023d216b55b))
+
+- **dep**: Update
+  ([`007c87f`](https://github.com/94836615/betok_backend/commit/007c87f4b6d7ea2571bba3b20bc4662f03711f64))
+
+### Features
+
+- **followers**: Added followers
+  ([`1ee93ac`](https://github.com/94836615/betok_backend/commit/1ee93ac712a8f034145caa253b8c97ab99b7cdf8))
+
+
 ## v0.1.1 (2025-03-25)
+
+### Build System
+
+- **dep**: Updated dep
+  ([`da48499`](https://github.com/94836615/betok_backend/commit/da484995670793b79c196e849a10da0833af6982))
 
 
 ## v0.2.0-beta.3 (2025-05-21)
