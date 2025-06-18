@@ -1,6 +1,9 @@
 # CHANGELOG
 
 
+## v0.3.0-beta.2 (2025-06-18)
+
+
 ## v0.3.0-beta.1 (2025-06-18)
 
 
@@ -18,6 +21,9 @@
   ([`007c87f`](https://github.com/94836615/betok_backend/commit/007c87f4b6d7ea2571bba3b20bc4662f03711f64))
 
 ### Features
+
+- **comments**: Added comments logic
+  ([`c3af909`](https://github.com/94836615/betok_backend/commit/c3af9091a6cdddab02c664f8b89db5b0a241696d))
 
 - **followers**: Added followers
   ([`1ee93ac`](https://github.com/94836615/betok_backend/commit/1ee93ac712a8f034145caa253b8c97ab99b7cdf8))
