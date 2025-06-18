@@ -12,6 +12,7 @@ from sqlalchemy.orm import Session
 from src.core.config import settings
 from src.core.db import get_db
 from src.crud.likes_operations import count_video_likes
+from src.crud.comments_operations import count_video_comments
 from src.crud.video_upload import video_upload
 from src.models.video import Video
 
@@ -33,13 +34,15 @@ def get_videos(
     result = []
     for video in videos:
         likes_count = count_video_likes(db, str(video.id))
+        comments_count = count_video_comments(db, str(video.id))
         result.append({
             "id": video.id,
             "filename": video.filename,
             "url": video.url,
             "caption": video.caption,
             "created_at": video.created_at.isoformat(),
-            "likes_count": likes_count
+            "likes_count": likes_count,
+            "comments_count": comments_count
         })
 
     return result
