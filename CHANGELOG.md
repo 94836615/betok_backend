@@ -1,6 +1,5 @@
 # CHANGELOG
 
-
 ## v0.2.0-beta.4 (2025-06-18)
 
 ### Build System
@@ -16,14 +15,12 @@
 - **followers**: Added followers
   ([`1ee93ac`](https://github.com/94836615/betok_backend/commit/1ee93ac712a8f034145caa253b8c97ab99b7cdf8))
 
-
 ## v0.1.1 (2025-03-25)
 
 ### Build System
 
 - **dep**: Updated dep
   ([`da48499`](https://github.com/94836615/betok_backend/commit/da484995670793b79c196e849a10da0833af6982))
-
 
 ## v0.2.0-beta.3 (2025-05-21)
 
