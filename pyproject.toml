@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "betok"
-version = "0.1.1"
+version = "0.2.0-beta.3"
 description = ""
 authors = ["Noah <noahnap@hotmail.com>"]
 readme = "README.md"
@@ -9,10 +9,15 @@ package-mode = false
 [tool.poetry.dependencies]
 python = "^3.12"
 fastapi = {extras = ["standard"], version = "^0.115.12"}
+minio = "^7.2.15"
+sqlalchemy = "^2.0.40"
+psycopg2 = "^2.9.10"
+python-dotenv = "^1.0.1"
 
 [tool.poetry.group.dev.dependencies]
 commitizen = "^4.4.1"
 python-semantic-release = "^9.21.0"
+alembic = "^1.15.2"
 
 [build-system]
 requires = ["poetry-core"]
@@ -29,7 +34,6 @@ allow_zero_version = true
 no_git_verify = false
 tag_format = "v{version}"
 version_toml = ["pyproject.toml:tool.poetry.version"]
-version_variable = ["setup.py:__version__"]
 
 [tool.semantic_release.branches.main]
 match = "(main|master)"

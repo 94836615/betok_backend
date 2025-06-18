@@ -1,13 +1,60 @@
 # CHANGELOG
 
-
-## v0.1.1 (2025-03-25)
+## v0.2.0-beta.3 (2025-05-21)
 
 ### Build System
 
-- **pyproject**: Fixed version_variable
-  ([`4ffb0d6`](https://github.com/94836615/betok_backend/commit/4ffb0d66998fe7daa8c1c627387471dd141752b4))
+- **deps**: Updated deps
+  ([`eeccb18`](https://github.com/94836615/betok_backend/commit/eeccb18f18a598fb68c989be214c95b51cf75e2d))
 
+### Features
+
+- **likes**: Implemented likes
+  ([`4d8c50e`](https://github.com/94836615/betok_backend/commit/4d8c50e5e3b96829ac1f0e7cf99a4f649ad084fb))
+
+- **video-feed/upload**: Refactored and made it possible to see the videos on the front-end. by
+  adjusting some code and rebuild the videos function
+  ([`32bf6d6`](https://github.com/94836615/betok_backend/commit/32bf6d6f7dba6d2ed117adda4111d18271e55e4d))
+
+- **video-retrieve**: Made it possible to retrieve metadata which in the end will load the video
+  ([`615d2d3`](https://github.com/94836615/betok_backend/commit/615d2d36cdd4532d06889737dd009c4d7ae23be9))
+
+### Performance Improvements
+
+- **alembic**: Implemented alembic for db migrations and other stuff
+  ([`6b3f12d`](https://github.com/94836615/betok_backend/commit/6b3f12dfc3a019d6ac4c5e2fcbdaec342b164e4d))
+
+### Refactoring
+
+- **metadata-db**: Made it possible that metadata gets stored in a postgrsql db
+  ([`989f6fd`](https://github.com/94836615/betok_backend/commit/989f6fda5944aa99c833526fb21ffa35080a99a2))
+
+
+## v0.2.0-beta.2 (2025-04-01)
+
+### Bug Fixes
+
+- **api**: Fixed the fault where users cant upload their video
+  ([`d572cc9`](https://github.com/94836615/betok_backend/commit/d572cc92eeba4244cf0f72d479cee6fffd0137bf))
+
+### Build System
+
+- **deps**: Updated deps
+  ([`6110d6c`](https://github.com/94836615/betok_backend/commit/6110d6cc4334d9d5942997fd085fe791e2453e31))
+
+- **deps/config**: Updated deps and adjusted the makefile
+  ([`665638f`](https://github.com/94836615/betok_backend/commit/665638fd1ad82c857f9e4b737831f31c3a2feccb))
+
+- **pyproject**: Removed version file temp
+  ([`65faceb`](https://github.com/94836615/betok_backend/commit/65faceb110061a85a7be8ab285472a6ca92aa660))
+
+### Refactoring
+
+- **cors**: Cors changes
+  ([`56d452c`](https://github.com/94836615/betok_backend/commit/56d452c9294b512c09b432e8ce8cfd1d4c3b9545))
+
+- **video_message**: Adjusted the return message of the endpoint
+  ([`800a30a`](https://github.com/94836615/betok_backend/commit/800a30ae68505dceb067393465ddc6d03
 
 ## v0.1.1-beta.1 (2025-03-25)
 
