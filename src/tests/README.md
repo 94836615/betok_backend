@@ -6,7 +6,7 @@ This directory contains unit tests for the Betok application.
 
 - `conftest.py`: Contains pytest fixtures used across multiple test files
 - `test_models.py`: Tests for the database models
-- `test_videos_api.py`: Tests for the videos API endpoints
+- `test_videos_api.py`: Tests for the videos API endpoints, including video sharing functionality
 - `test_crud_operations.py`: Tests for CRUD operations
 
 ## Running Tests
