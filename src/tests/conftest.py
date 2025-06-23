@@ -60,7 +60,7 @@ def mock_minio():
 # Mock video upload function
 @pytest.fixture(scope="function")
 def mock_video_upload():
-    with patch("src.crud.video_upload.video_upload", new_callable=AsyncMock) as mock:
+    with patch("src.crud.video_upload.video_upload") as mock:
         mock.return_value = {
             "filename": "test_video_123.mp4"
         }

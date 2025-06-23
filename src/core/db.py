@@ -1,4 +1,5 @@
 import os
+import sys
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker
@@ -8,8 +9,12 @@ load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 
+# If DATABASE_URL is not set and we're running tests, use SQLite in-memory database
 if not DATABASE_URL:
-    raise ValueError("db url is niet gezet!")
+    if 'pytest' in sys.modules:
+        DATABASE_URL = "sqlite:///:memory:"
+    else:
+        raise ValueError("db url is niet gezet!")
 
 # Configure engine with connection pooling settings
 engine = create_engine(
