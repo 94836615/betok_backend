@@ -79,11 +79,14 @@ async def post_video(
     db.commit()
     db.refresh(video_entry)
 
-    return JSONResponse(content={
-        "message": "Upload success",
-        "video_id": str(video_entry.id),
-        "object_name": object_name,
-        "stored_filename": video.filename,
-        "file_size": stat.size,
-        "content_type": stat.content_type
-    })
+    return JSONResponse(
+        status_code=201,
+        content={
+            "message": "Upload success",
+            "video_id": str(video_entry.id),
+            "object_name": object_name,
+            "stored_filename": video.filename,
+            "file_size": stat.size,
+            "content_type": stat.content_type
+        }
+    )
