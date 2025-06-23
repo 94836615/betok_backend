@@ -33,6 +33,10 @@ jobs:
 
       - name: Run unit tests
         env:
-          DATABASE_URL: "sqlite:///:memory:"
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          MINIO_API_LINK: "https://minio.example.com"
+          MINIO_ACCESS_KEY: "minioadmin"
+          MINIO_SECRET_KEY: "minioadmin"
+          PREFIX: "/api/v1"
         run: |
           poetry run make run_test
