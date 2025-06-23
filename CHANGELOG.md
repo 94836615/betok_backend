@@ -1,6 +1,17 @@
 # CHANGELOG
 
 
+## v0.4.0 (2025-06-23)
+
+### Testing
+
+- **db-url**: Updated test files
+  ([`ef19a41`](https://github.com/94836615/betok_backend/commit/ef19a4198596ed31488e4f3b212d5cb4baaad473))
+
+- **tests**: Updated tests
+  ([`a7373d5`](https://github.com/94836615/betok_backend/commit/a7373d5f6c40d63819a3eacff4f63fec9b7b6350))
+
+
 ## v0.4.0-beta.1 (2025-06-23)
 
 
@@ -8,6 +19,11 @@
 
 
 ## v0.3.0-beta.2 (2025-06-18)
+
+### Testing
+
+- **tests**: Added the unit tests and other related tasks
+  ([`cb79d7e`](https://github.com/94836615/betok_backend/commit/cb79d7efac421272a1263d3f900a32448fb0bb44))
 
 
 ## v0.3.0-beta.1 (2025-06-18)
