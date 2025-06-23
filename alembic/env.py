@@ -6,6 +6,7 @@ from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 import src.models.video
 import src.models.likes
+import src.models.comments
 from alembic import context
 
 from src.core.db import Base

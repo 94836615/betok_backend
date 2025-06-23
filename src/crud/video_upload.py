@@ -33,6 +33,7 @@ async def video_upload(file: UploadFile = File(...)):
             content_type=file.content_type or "video/mp4"  # keyword argument
         )
     except S3Error as e:
-        raise S3Error(f"Error uploading video: {e}")
+        # Re-raise the original S3Error
+        raise Exception(f"Error uploading video: {e}")
 
     return {"message": "Upload success", "size": file_size, "filename": object_name}
