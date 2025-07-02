@@ -13,7 +13,7 @@ router = APIRouter()
 logger = logging.getLogger(__name__)
 
 
-@router.post("/videos/{video_id}/comments", status_code=201, response_model=CommentResponse)
+@router.post("/videos/{video_id}/comments", status_code=201, response_model=CommentResponse) ## Test
 def create_comment_endpoint(
         video_id: uuid.UUID = Path(...),
         user_id: uuid.UUID = Body(...),  # Temporary until auth is implemented
